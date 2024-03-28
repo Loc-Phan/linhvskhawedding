@@ -16,14 +16,6 @@
   <meta property="og:description" content="Vi Kha &amp; Hoài Linh - Our wedding date: 02-04-2024">
   <meta property="og:image" content="./publics/images/SON01399.jpg">
   <meta property="og:image:url" content="./publics/images/SON01399.jpg">
-  <script
-    type='text/javascript'>window.ladi_viewport = function (b) { var a = document; b = b ? b : 'innerWidth'; var c = window[b]; var d = c < 768; if (typeof window.ladi_is_desktop == "undefined" || window.ladi_is_desktop == undefined) { window.ladi_is_desktop = !d; } var e = 960; var f = 420; var g = ''; if (!d) { g = "width=" + e + ",user-scalable=no,initial-scale=1.0"; } else { var h = 1; var i = f; if (i != c) { h = c / i; } g = "width=" + i + ",user-scalable=no,initial-scale=" + h + ",minimum-scale=" + h + ",maximum-scale=" + h; } var j = a.getElementById("viewport"); if (!j) { j = a.createElement("meta"); j.id = "viewport"; j.name = "viewport"; a.head.appendChild(j); } j.setAttribute("content", g); }; window.ladi_viewport(); window.ladi_fbq_data = []; window.ladi_fbq = function () { window.ladi_fbq_data.push(arguments); }; window.ladi_ttq_data = []; window.ladi_ttq = function () { window.ladi_ttq_data.push(arguments); };</script>
-  <script>
-    document.getElementById('playButton').addEventListener('click', function () {
-      var audio = document.getElementById('player');
-      audio.play();
-    });
-  </script>
   <meta property="og:title" content="Hoài Linh &#38; Vi Kha Wedding" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="Thiệp thời tham dự lễ thành hôn đặc biệt dành cho bạn" />
@@ -458,6 +450,7 @@
     }
 
     .ladi-wraper {
+      position: relative;
       width: 100%;
       min-height: 100%;
       overflow: hidden;
@@ -4290,15 +4283,37 @@
       </path>
     </symbol>
   </svg>
-  <button id="playButton">Play Audio
-    <audio id="player" controls autoplay loop>
-      <source
-        src="./publics/audio/Y2meta.app - MV LYRICS Cưới Nhau Đi Yes I Do Bùi Anh Tuấn ft Hiền Hồ (128 kbps).mp3"
-        type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </button>
   <div class="ladi-wraper">
+    <div id="playButton"
+      style="position: absolute; top: 50px; right: 30px; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 20px; background: #df4758; z-index: 10;">
+      <span id="playerVolumeOff"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff"
+          class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
+          <path
+            d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zm7.137 2.096a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z">
+          </path>
+        </svg>
+      </span>
+      <span id="playerVolumeOn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff" class="bi bi-volume-up-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+          </path>
+          <path
+            d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+          </path>
+          <path
+            d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+          </path>
+        </svg>
+      </span>
+      <audio id="player" autoplay loop>
+        <source
+          src="./publics/audio/Y2meta.app - MV LYRICS Cưới Nhau Đi Yes I Do Bùi Anh Tuấn ft Hiền Hồ (128 kbps).mp3"
+          type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
     <div id="SECTION1" class='ladi-section'>
       <div class='ladi-section-background'></div>
       <div class="ladi-overlay"></div>
@@ -4922,6 +4937,15 @@
   <div id="backdrop-popup" class="backdrop-popup"></div>
   <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
   <div id="lightbox-screen" class="lightbox-screen"></div>
+  <script
+    type='text/javascript'>window.ladi_viewport = function (b) { var a = document; b = b ? b : 'innerWidth'; var c = window[b]; var d = c < 768; if (typeof window.ladi_is_desktop == "undefined" || window.ladi_is_desktop == undefined) { window.ladi_is_desktop = !d; } var e = 960; var f = 420; var g = ''; if (!d) { g = "width=" + e + ",user-scalable=no,initial-scale=1.0"; } else { var h = 1; var i = f; if (i != c) { h = c / i; } g = "width=" + i + ",user-scalable=no,initial-scale=" + h + ",minimum-scale=" + h + ",maximum-scale=" + h; } var j = a.getElementById("viewport"); if (!j) { j = a.createElement("meta"); j.id = "viewport"; j.name = "viewport"; a.head.appendChild(j); } j.setAttribute("content", g); }; window.ladi_viewport(); window.ladi_fbq_data = []; window.ladi_fbq = function () { window.ladi_fbq_data.push(arguments); }; window.ladi_ttq_data = []; window.ladi_ttq = function () { window.ladi_ttq_data.push(arguments); };</script>
+  <script>
+    window.document.getElementById('playButton').addEventListener('click', function () {
+
+      var audio = document.getElementById('player');
+      audio.play();
+    });
+  </script>
   <script id="script_lazyload"
     type="text/javascript">window.lazyload_run = function (dom, is_first, check_dom_rect) { if (check_dom_rect && (document.body.clientWidth <= 0 || document.body.clientheight <= 0)) { return setTimeout(function () { window.lazyload_run(dom, is_first, check_dom_rect); }, 1); } var style_lazyload = document.getElementById('style_lazyload'); var list_element_lazyload = dom.querySelectorAll('body.lazyload .ladi-overlay, body.lazyload .ladi-box, body.lazyload .ladi-button-background, body.lazyload .ladi-collection-item, body.lazyload .ladi-countdown-background, body.lazyload .ladi-form-item-background, body.lazyload .ladi-form-label-container .ladi-form-label-item.image, body.lazyload .ladi-frame-background, body.lazyload .ladi-gallery-view-item, body.lazyload .ladi-gallery-control-item, body.lazyload .ladi-headline, body.lazyload .ladi-image-background, body.lazyload .ladi-image-compare, body.lazyload .ladi-list-paragraph ul li, body.lazyload .ladi-section-background, body.lazyload .ladi-survey-option-background, body.lazyload .ladi-survey-option-image, body.lazyload .ladi-tabs-background, body.lazyload .ladi-video-background, body.lazyload .ladi-banner, body.lazyload .ladi-spin-lucky-screen, body.lazyload .ladi-spin-lucky-start'); var docEventScroll = window; for (var i = 0; i < list_element_lazyload.length; i++) { var rect = list_element_lazyload[i].getBoundingClientRect(); if (rect.x == "undefined" || rect.x == undefined || rect.y == "undefined" || rect.y == undefined) { rect.x = rect.left; rect.y = rect.top; } var offset_top = rect.y + window.scrollY; if (offset_top >= window.scrollY + window.innerHeight || window.scrollY >= offset_top + list_element_lazyload[i].offsetHeight) { list_element_lazyload[i].classList.add('ladi-lazyload'); } } if (typeof style_lazyload != "undefined" && style_lazyload != undefined) { style_lazyload.parentElement.removeChild(style_lazyload); } document.body.classList.remove("lazyload"); var currentScrollY = window.scrollY; var stopLazyload = function (event) { if (event.type == "scroll" && window.scrollY == currentScrollY) { currentScrollY = -1; return; } docEventScroll.removeEventListener('scroll', stopLazyload); list_element_lazyload = document.getElementsByClassName('ladi-lazyload'); while (list_element_lazyload.length > 0) { list_element_lazyload[0].classList.remove('ladi-lazyload'); } }; if (is_first) { var scrollEventPassive = null; try { var opts = Object.defineProperty({}, 'passive', { get: function () { scrollEventPassive = { passive: true }; } }); window.addEventListener('testPassive', null, opts); window.removeEventListener('testPassive', null, opts); } catch (e) { } docEventScroll.addEventListener('scroll', stopLazyload, scrollEventPassive); } return dom; }; window.lazyload_run(document, true, true);</script>
   <!--[if lt IE 9]><script src="https://w.ladicdn.com/v2/source/html5shiv.min.js?v=1706841524105"></script><script src="https://w.ladicdn.com/v2/source/respond.min.js?v=1706841524105"></script><![endif]-->
