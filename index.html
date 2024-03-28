@@ -4284,8 +4284,8 @@
     </symbol>
   </svg>
   <div class="ladi-wraper">
-    <div id="playButton"
-      style="position: absolute; top: 50px; right: 30px; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 20px; background: #df4758; z-index: 10;">
+    <div
+      style="position: fixed; top: 20px; right: 20px; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; border-radius: 20px; background: #df4758; z-index: 10; cursor: pointer;">
       <span id="playerVolumeOff"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff"
           class="bi bi-volume-mute-fill" viewBox="0 0 16 16">
           <path
@@ -4293,7 +4293,7 @@
           </path>
         </svg>
       </span>
-      <span id="playerVolumeOn">
+      <span id="playerVolumeOn" style="display: none;">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="27" fill="#fff" class="bi bi-volume-up-fill"
           viewBox="0 0 16 16">
           <path
@@ -4309,7 +4309,7 @@
       </span>
       <audio id="player" autoplay loop>
         <source
-          src="./publics/audio/Y2meta.app - MV LYRICS Cưới Nhau Đi Yes I Do Bùi Anh Tuấn ft Hiền Hồ (128 kbps).mp3"
+          src="./publics/audio/audio.mp3"
           type="audio/mp3">
         Your browser does not support the audio element.
       </audio>
@@ -4940,10 +4940,21 @@
   <script
     type='text/javascript'>window.ladi_viewport = function (b) { var a = document; b = b ? b : 'innerWidth'; var c = window[b]; var d = c < 768; if (typeof window.ladi_is_desktop == "undefined" || window.ladi_is_desktop == undefined) { window.ladi_is_desktop = !d; } var e = 960; var f = 420; var g = ''; if (!d) { g = "width=" + e + ",user-scalable=no,initial-scale=1.0"; } else { var h = 1; var i = f; if (i != c) { h = c / i; } g = "width=" + i + ",user-scalable=no,initial-scale=" + h + ",minimum-scale=" + h + ",maximum-scale=" + h; } var j = a.getElementById("viewport"); if (!j) { j = a.createElement("meta"); j.id = "viewport"; j.name = "viewport"; a.head.appendChild(j); } j.setAttribute("content", g); }; window.ladi_viewport(); window.ladi_fbq_data = []; window.ladi_fbq = function () { window.ladi_fbq_data.push(arguments); }; window.ladi_ttq_data = []; window.ladi_ttq = function () { window.ladi_ttq_data.push(arguments); };</script>
   <script>
-    window.document.getElementById('playButton').addEventListener('click', function () {
-
+    window.document.getElementById('playerVolumeOff').addEventListener('click', function () {
+      const playerVolumeOn = document.getElementById("playerVolumeOn");
+      playerVolumeOn.style.display = "block";
+      const playerVolumeOff = document.getElementById("playerVolumeOff");
+      playerVolumeOff.style.display = "none";
       var audio = document.getElementById('player');
       audio.play();
+    });
+    window.document.getElementById('playerVolumeOn').addEventListener('click', function () {
+      const playerVolumeOff = document.getElementById("playerVolumeOff");
+      playerVolumeOff.style.display = "block";
+      const playerVolumeOn = document.getElementById("playerVolumeOn");
+      playerVolumeOn.style.display = "none";
+      var audio = document.getElementById('player');
+      audio.pause();
     });
   </script>
   <script id="script_lazyload"
